@@ -10,12 +10,10 @@ export default function Dashboard() {
 	const [pageSize] = useState(5);
 	const [showAddForm, setShowAddForm] = useState(false);
 	const [contactToEdit, setContactToEdit] = useState(null);
-	const [user, setUser] = useState(null);
 
-	// Check login and fetch contacts
 	useEffect(() => {
 		const token = localStorage.getItem("token");
-		if (!token) navigate("/"); // redirect if not logged in
+		if (!token) navigate("/");
 		else fetchContacts(token);
 	}, [navigate]);
 
@@ -35,7 +33,7 @@ export default function Dashboard() {
 
 	const handleLogout = () => {
 		localStorage.removeItem("token");
-		navigate("/"); // redirect to landing page
+		navigate("/");
 	};
 
 	const handleDelete = async (id) => {
@@ -69,14 +67,14 @@ export default function Dashboard() {
 		setContactToEdit(null);
 	};
 
-	// Filter contacts
+	// Filter contacts...
 	const filteredContacts = contacts.filter(
 		(c) =>
 			c.name.toLowerCase().includes(search.toLowerCase()) ||
 			c.email.toLowerCase().includes(search.toLowerCase())
 	);
 
-	// Pagination
+	// Pagination...
 	const indexOfLast = currentPage * pageSize;
 	const indexOfFirst = indexOfLast - pageSize;
 	const currentContacts = filteredContacts.slice(indexOfFirst, indexOfLast);
@@ -92,7 +90,7 @@ export default function Dashboard() {
 				className="d-flex justify-content-between align-items-center mb-4 w-100 px-3"
 				style={{ maxWidth: "1000px" }}
 			>
-				<h1 className="fw-bold">{user.name}'s Contacts</h1>
+				<h1 className="fw-bold">User Contacts</h1>
 				<div>
 					<button
 						className="btn btn-success me-2"

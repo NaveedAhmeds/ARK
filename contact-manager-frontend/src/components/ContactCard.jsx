@@ -20,7 +20,7 @@ export default function Dashboard() {
 	const fetchContacts = async (token) => {
 		try {
 			const res = await fetch(
-				"https://api-for-contacts-eox3.vercel.app/api/contacts",
+				"https://api-for-contacts.vercel.app/api/contacts",
 				{
 					headers: { Authorization: `Bearer ${token}` },
 				}

@@ -25,7 +25,7 @@ export default function ResetPassword() {
 
 		try {
 			const res = await fetch(
-				`https://api-for-contacts-eox3.vercel.app/api/auth/reset-password/${token}`,
+				`https://api-for-contacts.vercel.app/api/auth/reset-password/${token}`,
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },

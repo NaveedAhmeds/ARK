@@ -18,7 +18,7 @@ export default function Login() {
 
 		try {
 			const res = await fetch(
-				"https://api-for-contacts-eox3.vercel.app/api/auth/login",
+				"https://api-for-contacts.vercel.app/api/auth/login",
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },

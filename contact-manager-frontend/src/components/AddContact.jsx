@@ -27,8 +27,8 @@ export default function AddContact({
 
 		const method = contactToEdit ? "PUT" : "POST";
 		const url = contactToEdit
-			? `https://api-for-contacts-eox3.vercel.app/api/contacts/${contactToEdit._id}`
-			: "https://api-for-contacts-eox3.vercel.app/api/contacts";
+			? `https://api-for-contacts.vercel.app/api/contacts/${contactToEdit._id}`
+			: "https://api-for-contacts.vercel.app/api/contacts";
 
 		try {
 			const res = await fetch(url, {

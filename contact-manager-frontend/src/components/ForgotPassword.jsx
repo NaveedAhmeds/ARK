@@ -15,7 +15,7 @@ export default function ForgotPassword() {
 
 		try {
 			const res = await fetch(
-				"https://api-for-contacts-eox3.vercel.app/api/auth/forgot-password",
+				"https://api-for-contacts.vercel.app/api/auth/forgot-password",
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },

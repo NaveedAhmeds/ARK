@@ -30,10 +30,10 @@ export default function Login() {
 
 			if (!res.ok) throw new Error(data.message || "Login failed");
 
-			// Save JWT token in localStorage
+			//Save JWT token in localStorage...
 			localStorage.setItem("token", data.token);
 
-			// Redirect to dashboard
+			//Redirect to dashboard...
 			navigate("/Dashboard");
 		} catch (err) {
 			setError(err.message || "Server error, please try again later.");
@@ -92,6 +92,10 @@ export default function Login() {
 						Login
 					</button>
 				</form>
+
+				<p className="mt-3 text-center">
+					<a href="/forgot-password">Forgot Password?</a>
+				</p>
 			</div>
 		</div>
 	);

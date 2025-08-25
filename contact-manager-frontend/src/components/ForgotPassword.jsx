@@ -1,3 +1,4 @@
+// src/components/ForgotPassword.jsx
 import { useState } from "react";
 
 export default function ForgotPassword() {
@@ -8,8 +9,8 @@ export default function ForgotPassword() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		setMessage("");
 		setError("");
+		setMessage("");
 		setLoading(true);
 
 		try {
@@ -24,9 +25,11 @@ export default function ForgotPassword() {
 
 			const data = await res.json();
 
-			if (!res.ok) throw new Error(data.message || "Something went wrong");
+			if (!res.ok) throw new Error(data.message || "Failed to send reset link");
 
-			setMessage("Password reset link sent! Check your email.");
+			setMessage(
+				"Password reset link sent! Check your email for further instructions."
+			);
 			setEmail("");
 		} catch (err) {
 			setError(err.message || "Server error, please try again later.");
@@ -59,7 +62,7 @@ export default function ForgotPassword() {
 						<input
 							type="email"
 							className="form-control"
-							placeholder="Enter your registered email"
+							placeholder="Enter your email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							required

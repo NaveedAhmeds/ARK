@@ -45,7 +45,7 @@ export default function Dashboard() {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await fetch(
-				`https://api-for-contacts-eox3.vercel.app/api/contacts/${id}`,
+				`https://api-for-contacts.vercel.app/api/contacts/${id}`,
 				{
 					method: "DELETE",
 					headers: { Authorization: `Bearer ${token}` },

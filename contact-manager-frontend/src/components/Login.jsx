@@ -5,17 +5,20 @@ export default function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
+	const [loading, setLoading] = useState(false); // new state
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setError("");
+		setLoading(true);
 
 		const trimmedEmail = email.trim().toLowerCase();
 		const trimmedPassword = password.trim();
 
 		if (!trimmedEmail || !trimmedPassword) {
 			setError("Please enter both email and password.");
+			setLoading(false);
 			return;
 		}
 
@@ -36,13 +39,12 @@ export default function Login() {
 
 			if (!res.ok) throw new Error(data.message || "Login failed");
 
-			// Save JWT token
 			localStorage.setItem("token", data.token);
-
-			// Redirect to dashboard
 			navigate("/Dashboard");
 		} catch (err) {
 			setError(err.message || "Server error, please try again later.");
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -69,6 +71,7 @@ export default function Login() {
 			>
 				<h2 className="mb-4 text-center">Login</h2>
 				{error && <div className="alert alert-danger text-start">{error}</div>}
+
 				<form onSubmit={handleSubmit}>
 					<div className="mb-3 text-start">
 						<label className="form-label">Email</label>
@@ -80,6 +83,7 @@ export default function Login() {
 							required
 						/>
 					</div>
+
 					<div className="mb-3 text-start">
 						<label className="form-label">Password</label>
 						<input
@@ -90,10 +94,23 @@ export default function Login() {
 							required
 						/>
 					</div>
-					<button type="submit" className="btn btn-primary w-100">
-						Login
+
+					<button
+						type="submit"
+						className="btn btn-primary w-100"
+						disabled={loading}
+					>
+						{loading ? (
+							<>
+								<span className="spinner-border spinner-border-sm me-2"></span>
+								Logging In...
+							</>
+						) : (
+							"Login"
+						)}
 					</button>
 				</form>
+
 				<p className="mt-3 text-center">
 					<a href="/forgot-password">Forgot Password?</a>
 				</p>

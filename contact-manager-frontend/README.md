@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# ARK Contact Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![License](https://img.shields.io/github/license/NaveedAhmeds/ARK?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/NaveedAhmeds/ARK?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/NaveedAhmeds/ARK?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/NaveedAhmeds/ARK?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/NaveedAhmeds/ARK?style=for-the-badge)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+**ARK Contact Manager** is a modern web application designed to efficiently manage and organize contacts. The project provides a clean user interface, seamless user experience, and scalable architecture, making it suitable for both personal and professional use.
 
-### `npm start`
+This application leverages **React** on the frontend to provide dynamic interactions and a responsive design. It is built with a modular codebase that ensures maintainability and flexibility for future enhancements.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- 📇 **Add, edit, and delete contacts** with ease  
+- 🔍 **Search functionality** for quick access to stored contacts  
+- 🗂️ **Organized contact list** with a user-friendly UI  
+- 📱 **Responsive design** for both desktop and mobile  
+- ⚡ **Fast and interactive interface** powered by React  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** React, JavaScript, CSS  
+- **Backend (planned):** Node.js, Express, MongoDB  
+- **Version Control:** Git, GitHub  
+- **Deployment:** Vercel  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+Follow these steps to set up the project locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)  
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository:
 
-## Learn More
+   ```bash
+   git clone https://github.com/NaveedAhmeds/ARK.git
+Navigate to the project folder:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy
+Edit
+cd ARK/contact-manager-frontend
+Install dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
+Copy
+Edit
+npm install
+Start the development server:
 
-### Code Splitting
+bash
+Copy
+Edit
+npm start
+Open your browser at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+arduino
+Copy
+Edit
+http://localhost:3000
+Folder Structure
+php
+Copy
+Edit
+contact-manager-frontend/
+├── public/             # Static assets
+├── src/                # Source code
+│   ├── components/     # Reusable React components
+│   ├── pages/          # Page-level components
+│   ├── styles/         # CSS files
+│   └── App.js          # Main application component
+├── package.json        # Project dependencies and scripts
+└── README.md           # Documentation
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Deployment
+The project is set up for deployment on Vercel.
+To deploy:
 
-### Making a Progressive Web App
+bash
+Copy
+Edit
+vercel
+Ensure you have the Vercel CLI installed and linked to your account.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+License
+This project is licensed under the MIT License.
+See the LICENSE file for details.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Author
+Naveed Ahmed Syed
+LinkedIn | GitHub

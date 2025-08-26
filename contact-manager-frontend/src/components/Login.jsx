@@ -11,7 +11,10 @@ export default function Login() {
 		e.preventDefault();
 		setError("");
 
-		if (!email || !password) {
+		const trimmedEmail = email.trim().toLowerCase();
+		const trimmedPassword = password.trim();
+
+		if (!trimmedEmail || !trimmedPassword) {
 			setError("Please enter both email and password.");
 			return;
 		}
@@ -22,7 +25,10 @@ export default function Login() {
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ email, password }),
+					body: JSON.stringify({
+						email: trimmedEmail,
+						password: trimmedPassword,
+					}),
 				}
 			);
 
@@ -30,10 +36,10 @@ export default function Login() {
 
 			if (!res.ok) throw new Error(data.message || "Login failed");
 
-			//Save JWT token in localStorage...
+			// Save JWT token
 			localStorage.setItem("token", data.token);
 
-			//Redirect to dashboard...
+			// Redirect to dashboard
 			navigate("/Dashboard");
 		} catch (err) {
 			setError(err.message || "Server error, please try again later.");
@@ -62,9 +68,7 @@ export default function Login() {
 				style={{ width: "100%", maxWidth: "450px", borderRadius: "15px" }}
 			>
 				<h2 className="mb-4 text-center">Login</h2>
-
 				{error && <div className="alert alert-danger text-start">{error}</div>}
-
 				<form onSubmit={handleSubmit}>
 					<div className="mb-3 text-start">
 						<label className="form-label">Email</label>
@@ -76,7 +80,6 @@ export default function Login() {
 							required
 						/>
 					</div>
-
 					<div className="mb-3 text-start">
 						<label className="form-label">Password</label>
 						<input
@@ -87,12 +90,10 @@ export default function Login() {
 							required
 						/>
 					</div>
-
 					<button type="submit" className="btn btn-primary w-100">
 						Login
 					</button>
 				</form>
-
 				<p className="mt-3 text-center">
 					<a href="/forgot-password">Forgot Password?</a>
 				</p>

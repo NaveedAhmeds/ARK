@@ -1,42 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARK Contact Manager - README</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      line-height: 1.6;
-      margin: 40px auto;
-      max-width: 900px;
-      padding: 0 20px;
-      background: #fff;
-      color: #24292f;
-    }
-    h1, h2, h3 {
-      border-bottom: 1px solid #eaecef;
-      padding-bottom: .3em;
-      margin-top: 1.5em;
-    }
-    pre {
-      background: #f6f8fa;
-      padding: 12px;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    code {
-      font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    .badges img {
-      margin-right: 8px;
-    }
-  </style>
-</head>
 <body>
 
   <h1>ARK Contact Manager</h1>

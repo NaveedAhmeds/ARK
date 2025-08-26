@@ -7,12 +7,14 @@ export default function Signup() {
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 	const [success, setSuccess] = useState("");
+	const [loading, setLoading] = useState(false); // new state
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setError("");
 		setSuccess("");
+		setLoading(true); // start loading
 
 		const trimmedName = name.trim();
 		const trimmedEmail = email.trim().toLowerCase();
@@ -20,6 +22,7 @@ export default function Signup() {
 
 		if (!trimmedName || !trimmedEmail || !trimmedPassword) {
 			setError("All fields are required.");
+			setLoading(false);
 			return;
 		}
 
@@ -42,12 +45,11 @@ export default function Signup() {
 			if (!res.ok) throw new Error(data.message || "Signup failed");
 
 			setSuccess("Account created! Redirecting to login...");
-
-			setTimeout(() => {
-				navigate("/login");
-			}, 1500);
+			setTimeout(() => navigate("/login"), 1500);
 		} catch (err) {
 			setError(err.message);
+		} finally {
+			setLoading(false); // stop loading
 		}
 	};
 
@@ -72,6 +74,7 @@ export default function Signup() {
 				{success && (
 					<div className="alert alert-success text-start">{success}</div>
 				)}
+
 				<form onSubmit={handleSubmit}>
 					<div className="mb-3 text-start">
 						<label className="form-label">Name</label>
@@ -83,6 +86,7 @@ export default function Signup() {
 							required
 						/>
 					</div>
+
 					<div className="mb-3 text-start">
 						<label className="form-label">Email</label>
 						<input
@@ -93,6 +97,7 @@ export default function Signup() {
 							required
 						/>
 					</div>
+
 					<div className="mb-3 text-start">
 						<label className="form-label">Password</label>
 						<input
@@ -103,8 +108,20 @@ export default function Signup() {
 							required
 						/>
 					</div>
-					<button type="submit" className="btn btn-success w-100">
-						Sign Up
+
+					<button
+						type="submit"
+						className="btn btn-success w-100"
+						disabled={loading}
+					>
+						{loading ? (
+							<>
+								<span className="spinner-border spinner-border-sm me-2"></span>
+								Signing Up...
+							</>
+						) : (
+							"Sign Up"
+						)}
 					</button>
 				</form>
 			</div>

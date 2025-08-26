@@ -14,13 +14,26 @@ export default function Signup() {
 		setError("");
 		setSuccess("");
 
+		const trimmedName = name.trim();
+		const trimmedEmail = email.trim().toLowerCase();
+		const trimmedPassword = password.trim();
+
+		if (!trimmedName || !trimmedEmail || !trimmedPassword) {
+			setError("All fields are required.");
+			return;
+		}
+
 		try {
 			const res = await fetch(
 				"https://api-for-contacts.vercel.app/api/auth/signup",
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ name, email, password }),
+					body: JSON.stringify({
+						name: trimmedName,
+						email: trimmedEmail,
+						password: trimmedPassword,
+					}),
 				}
 			);
 
@@ -43,7 +56,6 @@ export default function Signup() {
 			className="d-flex flex-column align-items-center justify-content-center"
 			style={{ minHeight: "100vh", padding: "2rem" }}
 		>
-			{/* Hero Headline */}
 			<h1
 				className="mb-5 display-4 fw-bold text-center"
 				style={{ lineHeight: "1.2" }}
